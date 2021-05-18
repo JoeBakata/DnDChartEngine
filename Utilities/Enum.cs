@@ -13,8 +13,8 @@
         D12,
         D20,
         D100,
-        DNull,
-        DTests
+        DNull
+        
     }
 
     public enum MonsterType
@@ -46,7 +46,7 @@
 
     public enum GemType
     {
-        Quartz = 10,  
+        Quartz = 10,    
         Turquoise = 10,
         Citrine = 50,
         Onyx = 50,
