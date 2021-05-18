@@ -36,9 +36,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="Charts\GetCharts.cs" />
     <Compile Include="Charts\Treasure\GemsTreasure.cs" />
@@ -47,6 +45,9 @@
     <Compile Include="Charts\Treasure\MonitaryTreasure.cs" />
     <Compile Include="test.cs" />
     <Compile Include="Utilities\Enum.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\MonetaryChartData.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
