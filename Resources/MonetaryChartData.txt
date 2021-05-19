@@ -1,1 +1,1 @@
-﻿A:Copper, D6, DNull, 1000, .25; Silver, D6, DNull, 1000, .30; Electrum, D4, DNull, 1000, .20; Gold, D6, D6, 1000, .35; Platinum, D2, DNull, 1000, .25
+﻿A:Copper,D6,DNull,1000,.25;Silver,D6,DNull,1000,.30;Electrum,D4,DNull,1000,.20;Gold,D6,D6,1000,.35;Platinum,D2,DNull,1000,.25
