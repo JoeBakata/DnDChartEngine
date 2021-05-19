@@ -29,12 +29,33 @@ namespace DungeonsAndDragons.ChartEngine.Charts
         /// </summary>
         public void GetMonetaryChart()
         {
-            MonetaryTreasure.Add(MonsterType.A, PopulateMonitaryChartA());
-            MonetaryTreasure.Add(MonsterType.B, PopulateMonitaryChartB());
-            MonetaryTreasure.Add(MonsterType.C, PopulateMonitaryChartC());
+            //MonetaryTreasure.Add(MonsterType.A, PopulateMonitaryChartA());
+            //MonetaryTreasure.Add(MonsterType.B, PopulateMonitaryChartB());
+            //MonetaryTreasure.Add(MonsterType.C, PopulateMonitaryChartC());
 
+            DungeonsAndDragons.ChartEngine.Services.OpenFile services = new DungeonsAndDragons.ChartEngine.Services.OpenFile();
+            List<string> monetaryChartData = services.GetMonetaryData();
+            string firstMonetaryChartData = monetaryChartData[0];
+            var firstSplit = firstMonetaryChartData.Split(':');
+            var monsterType = firstSplit[0];
+            var secondSplit = firstSplit[1].Split(';');
+            
 
         }
+
+        public List<Treasure.MonitaryTreasure> PopulateMonitaryChart(string[]  secondSplit)
+        {
+            var TreasureRewards = new List<Treasure.MonitaryTreasure>();
+            foreach (var element in secondSplit)
+            {
+
+            }
+
+
+
+            return TreasureRewards;
+        }
+
 
         public List<Treasure.MonitaryTreasure> PopulateMonitaryChartA()
         { 
