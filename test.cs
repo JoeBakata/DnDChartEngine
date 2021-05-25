@@ -36,22 +36,23 @@ namespace DungeonsAndDragons.ChartEngine
             //todo 4 CW the Percentage of B for electrum.
             List<MonitaryTreasure> Loot = FirstTest.MonetaryTreasure.First(x => x.Key == MonsterType.A).Value;
 
-            for (int i = 0; i < Loot.Count; i++)
-            {
-                if  //Not sure what the conditional should be. I think it should be an if statement
-                 { 
-                    Console.WriteLine($"The Die used for Chart A silver is {Dice.D6}");
-                 }
+            //for (int i = 0; i < Loot.Count; i++)
+            //{
+            //    if  //Not sure what the conditional should be. I think it should be an if statement
+            //     { 
+            //        Console.WriteLine($"The Die used for Chart A silver is {Dice.D6}");
+            //     }
 
-            }
+            //}
 
 
             //foreach (var item in Loot)
             //{
-                
+
             //    Console.WriteLine($"The items in A are {item.TreasureName}");
-                
+
             //}
+
             Console.ReadLine();
         }
     }

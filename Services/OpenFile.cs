@@ -12,9 +12,10 @@ namespace DungeonsAndDragons.ChartEngine.Services
         public List<string> GetMonetaryData(string MonetaryChartData = @"C:\Users\Joseph\Desktop\DungeonsAndDragons.ChartEngine\DungeonsAndDragons.ChartEngine\DungeonsAndDragons.ChartEngine\Resources\MonetaryChartData.txt")
         {
             List<string> MonetaryChartDataList = new List<string>();
-            using (FileStream fs = File.Open(MonetaryChartData, FileMode.Open))
+            using (StreamReader sR = new StreamReader(MonetaryChartData))
             {
-                MonetaryChartDataList.Add(fs.ToString());
+
+                MonetaryChartDataList.Add(sR.ReadLine());
             }
 
 
