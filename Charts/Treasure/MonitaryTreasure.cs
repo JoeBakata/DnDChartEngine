@@ -38,6 +38,14 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
        public double Percent { get; set; }
 
                
+
+        public int NumberOfDice { get; set; }
+
+
+        public int MaxRollValue { get; set; }
+        
+        
+        
         #endregion Properties
 
         /// <summary>
@@ -57,5 +65,23 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
             TreasureAmount = treasureAmount;
             Percent = percent;
         }
+
+        public MonitaryTreasure(string treasureName, int treasureAmount, int numberOfDice, int maxRollValue)
+        {
+            TreasureName = treasureName;
+            Dice1 = GetDice(maxRollValue, numberOfDice);
+            TreasureAmount = treasureAmount;
+            NumberOfDice = numberOfDice;
+            MaxRollValue = maxRollValue;
+
+        }
+
+        public Utilities.Dice GetDice(int maxRollValue, int numberOfDice)
+        {
+            int diceValue = maxRollValue / numberOfDice;
+            return (Utilities.Dice)diceValue;
+        }
+
     }
+
 }
