@@ -21,10 +21,6 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
        public Utilities.Dice Dice1 { get; set; }
 
 
-        /// <summary>
-        /// Multiple dice roll
-        /// </summary>
-        public Utilities.Dice Dice2 { get; set; }
 
         /// <summary>
         /// The amount of tresure.
@@ -38,7 +34,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
        public double Percent { get; set; }
 
                
-
+        //todo use /// to create a description of two following properties, NumberOfDice & MaxRollValue
         public int NumberOfDice { get; set; }
 
 
@@ -47,33 +43,23 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         
         
         #endregion Properties
-
-        /// <summary>
-        /// Instantiate new treasure type.
-        /// </summary>
-        /// <param name="treasureName"></param>
-        /// <param name="dice1"></param>
-        /// <param name="dice2"></param>
-        /// <param name="treasureAmount"></param>
-        /// <param name="percent"></param>
-        public MonitaryTreasure(string treasureName, Utilities.Dice dice1, Utilities.Dice dice2, int treasureAmount,
-            double percent)
-        {
-            TreasureName = treasureName;
-            Dice1 = dice1;
-            Dice2 = dice2;
-            TreasureAmount = treasureAmount;
-            Percent = percent;
-        }
-
-        public MonitaryTreasure(string treasureName, int treasureAmount, int numberOfDice, int maxRollValue)
+        //todo fill in property definitions for lines 50 - 54
+/// <summary>
+/// instantiate new MonitaryTreasure
+/// </summary>
+/// <param name="treasureName">Name of the treasure type aka Copper,Silver, etc (also on line 14)</param>
+/// <param name="treasureAmount"></param>
+/// <param name="numberOfDice"></param>
+/// <param name="maxRollValue"></param>
+/// <param name="percent"></param>
+        public MonitaryTreasure(string treasureName, int treasureAmount, int numberOfDice, int maxRollValue, double percent)
         {
             TreasureName = treasureName;
             Dice1 = GetDice(maxRollValue, numberOfDice);
             TreasureAmount = treasureAmount;
             NumberOfDice = numberOfDice;
             MaxRollValue = maxRollValue;
-
+            Percent = percent;
         }
 
         public Utilities.Dice GetDice(int maxRollValue, int numberOfDice)
@@ -81,7 +67,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
             int diceValue = maxRollValue / numberOfDice;
             return (Utilities.Dice)diceValue;
         }
-
+        //todo input the monetarychartdata in this format Monstertype:copper,amount,numberofdice,maxrollvalue,percent. 
     }
 
 }

@@ -35,13 +35,20 @@ namespace DungeonsAndDragons.ChartEngine.Charts
 
             Services.OpenFile services = new Services.OpenFile();
             List<string> monetaryChartData = services.GetMonetaryData();
-            string firstMonetaryChartData = monetaryChartData[0];
+            foreach (var treasurepiece in monetaryChartData)
+            {           
+                string firstMonetaryChartData = treasurepiece;
             var firstSplit = firstMonetaryChartData.Split(':');
             var monsterType = GetMonsterType(firstSplit[0]);
             var secondSplit = firstSplit[1].Split(';');
+                MonetaryTreasure.Add(monsterType, PopulateMonitaryChart(secondSplit));
 
-            MonetaryTreasure.Add(monsterType, PopulateMonitaryChart(secondSplit));
+            }
+
+
+
         }
+        //todo put in a description of this Method 
 
         public List<Treasure.MonitaryTreasure> PopulateMonitaryChart(string[] secondSplit)
         {
@@ -49,48 +56,23 @@ namespace DungeonsAndDragons.ChartEngine.Charts
             foreach (var element in secondSplit)
             {
                 var thirdSplit = element.Split(',');
-                TreasureRewards.Add(new Treasure.MonitaryTreasure(thirdSplit[0], getDice(thirdSplit[1]), getDice(thirdSplit[2]),
+                TreasureRewards.Add(new Treasure.MonitaryTreasure(thirdSplit[0], Int16.Parse(thirdSplit[1]), Int16.Parse(thirdSplit[2]),
                     Int16.Parse(thirdSplit[3]), double.Parse(thirdSplit[4])));
             }
 
             return TreasureRewards;
         }
 
-
-        private Dice getDice(string diceNumber)
-        {
-            switch(diceNumber)
-            {
-                case "D6":
-                    return Dice.D6;
-                case "D4":
-                    return Dice.D4;
-                case "DNull":
-                    return Dice.DNull;
-            }
-
-            return Dice.DNull;
-        }
-
+        //todo put in a description of this Method 
 
         private MonsterType GetMonsterType(string monsterType)
         {
-            switch(monsterType)
-            {
-                case "A":
-                    return MonsterType.A;
-                case "B":
-                    return MonsterType.B;
-            }
 
-            return MonsterType.A;
+            return (MonsterType)Enum.Parse(typeof(MonsterType), monsterType);
+
         }
 
-
-
-
-
-
+        
 
         #endregion Private Methods
 
