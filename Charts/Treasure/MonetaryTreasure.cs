@@ -68,7 +68,12 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
 
         public Utilities.Dice GetDice(int maxRollValue, int numberOfDice)
         {
-            int diceValue = maxRollValue / numberOfDice; //todo can't divide by zero even if the maxRollValue is zero. This needs to be fixed.
+
+            if(numberOfDice == 0)
+            {
+                return Utilities.Dice.DNull;
+            }
+            int diceValue = maxRollValue / numberOfDice; 
             return (Utilities.Dice)diceValue;
         }
     }
