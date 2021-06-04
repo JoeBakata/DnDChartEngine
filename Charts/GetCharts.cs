@@ -9,8 +9,8 @@ namespace DungeonsAndDragons.ChartEngine.Charts
 {
     public class GetCharts
     {
-        public Dictionary<MonsterType, List<Treasure.MonitaryTreasure>> MonetaryTreasure =
-            new Dictionary<MonsterType, List<Treasure.MonitaryTreasure>>();
+        public Dictionary<MonsterType, List<Treasure.MonetaryTreasure>> MonetaryTreasure =
+            new Dictionary<MonsterType, List<Treasure.MonetaryTreasure>>();
 
         public GetCharts()
         {
@@ -30,7 +30,6 @@ namespace DungeonsAndDragons.ChartEngine.Charts
         public void GetMonetaryChart()
         {
             //todo create a foreach loop through each line of the text file
-            //todo finish populating the monetarychart data.txt file
 
 
             Services.OpenFile services = new Services.OpenFile();
@@ -50,13 +49,13 @@ namespace DungeonsAndDragons.ChartEngine.Charts
         }
         //todo put in a description of this Method 
 
-        public List<Treasure.MonitaryTreasure> PopulateMonitaryChart(string[] secondSplit)
+        public List<Treasure.MonetaryTreasure> PopulateMonitaryChart(string[] secondSplit)
         {
-            var TreasureRewards = new List<Treasure.MonitaryTreasure>();
+            var TreasureRewards = new List<Treasure.MonetaryTreasure>();
             foreach (var element in secondSplit)
             {
                 var thirdSplit = element.Split(',');
-                TreasureRewards.Add(new Treasure.MonitaryTreasure(thirdSplit[0], Int16.Parse(thirdSplit[1]), Int16.Parse(thirdSplit[2]),
+                TreasureRewards.Add(new Treasure.MonetaryTreasure(thirdSplit[0], Int16.Parse(thirdSplit[1]), Int16.Parse(thirdSplit[2]),
                     Int16.Parse(thirdSplit[3]), double.Parse(thirdSplit[4])));
             }
 
