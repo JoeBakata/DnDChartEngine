@@ -42,13 +42,15 @@
     <Compile Include="Charts\Treasure\GemsTreasure.cs" />
     <Compile Include="Charts\Treasure\JewelryTreasure.cs" />
     <Compile Include="Charts\Treasure\MagicItemTreasure.cs" />
-    <Compile Include="Charts\Treasure\MonitaryTreasure.cs" />
+    <Compile Include="Charts\Treasure\MonetaryTreasure.cs" />
     <Compile Include="Services\OpenFile.cs" />
     <Compile Include="test.cs" />
     <Compile Include="Utilities\Enum.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\MonetaryChartData.txt" />
+    <Content Include="Resources\MonetaryChartData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
