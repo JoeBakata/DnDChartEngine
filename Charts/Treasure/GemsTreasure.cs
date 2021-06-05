@@ -33,6 +33,6 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
             this.GemType = gemType;
         }
        
-
+        
     }
 }

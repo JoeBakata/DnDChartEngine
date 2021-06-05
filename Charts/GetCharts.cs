@@ -16,6 +16,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts
         public Dictionary<MonsterType, List<Treasure.MonetaryTreasure>> MonetaryTreasure =
             new Dictionary<MonsterType, List<Treasure.MonetaryTreasure>>();
 
+
         public List<Treasure.JewelryValue> JewelryGPValueChart = new List<Treasure.JewelryValue>();
 
         public GetCharts()
@@ -51,7 +52,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts
             var firstSplit = firstMonetaryChartData.Split(':');
             var monsterType = GetMonsterType(firstSplit[0]);
             var secondSplit = firstSplit[1].Split(';');
-                MonetaryTreasure.Add(monsterType, PopulateMonitaryChart(secondSplit));
+                MonetaryTreasure.Add(monsterType, PopulateMonetaryChart(secondSplit));
 
             }
 
@@ -59,8 +60,12 @@ namespace DungeonsAndDragons.ChartEngine.Charts
 
         }
         //todo put in a description of this Method 
-
-        public List<Treasure.MonetaryTreasure> PopulateMonitaryChart(string[] secondSplit)
+        /// <summary>
+        /// Create the list of monetary treasure.
+        /// </summary>
+        /// <param name="secondSplit"></param>
+        /// <returns></returns>
+        public List<Treasure.MonetaryTreasure> PopulateMonetaryChart(string[] secondSplit)
         {
             var TreasureRewards = new List<Treasure.MonetaryTreasure>();
             foreach (var element in secondSplit)
@@ -77,6 +82,12 @@ namespace DungeonsAndDragons.ChartEngine.Charts
 
         //todo put in a description of this Method 
         #region Priviate Methods
+        /// <summary>
+        /// This gets the monster type of each monster.
+        /// <example>A, B, P, etc.</example>
+        /// </summary>
+        /// <param name="monsterType"></param>
+        /// <returns></returns>
         private MonsterType GetMonsterType(string monsterType)
         {
 

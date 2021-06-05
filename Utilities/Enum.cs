@@ -63,7 +63,8 @@
         Silver,
         Electrum,
         Gold,
-        Platinum
+        Platinum,
+        Jewelry
     }
 
     public enum MagicItemTypes

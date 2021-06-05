@@ -23,14 +23,14 @@ namespace DungeonsAndDragons.ChartEngine
 
             FirstTest = new Charts.GetCharts();
 
-            FirstTest.GetJewelryValueChart();
+            //FirstTest.GetJewelryValueChart();
 
-            foreach (var item in FirstTest.JewelryGPValueChart)
-            {
-                Console.WriteLine($"Here is the {item.JewelryType}");
-                Console.WriteLine($"It is worth {item.MinimumGPValue} at minimum");
-                Console.WriteLine($"Could be worth {item.MaximumGPValue}");
-            }
+            //foreach (var item in FirstTest.JewelryGPValueChart)
+            //{
+            //    Console.WriteLine($"Here is the {item.JewelryType}");
+            //    Console.WriteLine($"It is worth {item.MinimumGPValue} at minimum");
+            //    Console.WriteLine($"Could be worth {item.MaximumGPValue}");
+            //}
             //FirstTest.GetMonetaryChart();
 
 
@@ -52,3 +52,7 @@ namespace DungeonsAndDragons.ChartEngine
         }
     }
 }
+//todo Add Gems to the text file, it is similar to jewelry.
+//todo create the gem value object, similar to the jewelry value object.
+//todo display the gems with a foreach loop, similar to the jewelry one.
+//todo make comments for all classes, methods,
