@@ -65,4 +65,30 @@
         Gold,
         Platinum
     }
+
+    public enum MagicItemTypes
+    {
+        A = 20,
+        B = 30,
+        C = 40,
+        D = 65,
+        E = 85,
+        F = 90,
+        G = 95,
+        H = 100
+    
+    }
+
+    public enum JewelryType
+    {
+        Bracelet,
+        Pin,
+        Brooch,
+        Earring,
+        Pendant,
+        Necklace,
+        Crown,
+        Sceptre
+    }
+
 }

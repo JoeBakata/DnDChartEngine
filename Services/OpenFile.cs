@@ -9,7 +9,7 @@ namespace DungeonsAndDragons.ChartEngine.Services
 {
     public class OpenFile
     {
-        public List<string> GetMonetaryData(string MonetaryChartData = @"Resources\MonetaryChartData.txt")
+        public List<string> GetDataFile(string MonetaryChartData = @"Resources\MonetaryChartData.txt")
         {
             List<string> MonetaryChartDataList = new List<string>();
             using (StreamReader sR = new StreamReader(MonetaryChartData))
@@ -21,5 +21,6 @@ namespace DungeonsAndDragons.ChartEngine.Services
             }
                 return MonetaryChartDataList;
         }
+
     }
 }

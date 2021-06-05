@@ -9,20 +9,32 @@ namespace DungeonsAndDragons.ChartEngine.Charts
 {
     public class GetCharts
     {
+        #region Fields
+        Services.OpenFile services = new Services.OpenFile();
+        #endregion Fields
+
         public Dictionary<MonsterType, List<Treasure.MonetaryTreasure>> MonetaryTreasure =
             new Dictionary<MonsterType, List<Treasure.MonetaryTreasure>>();
 
+        public List<Treasure.JewelryValue> JewelryGPValueChart = new List<Treasure.JewelryValue>();
+
         public GetCharts()
         {
-
-
-            //string monstertype = "A";
-
-
         }
 
+        public void GetJewelryValueChart()
+        {
+            List<string> goldPieceValue = services.GetDataFile(@"Resources\JewelryValueData.txt");
+            
+            foreach (var item in goldPieceValue)
+            {
+                var firstJewelryValueData = item.Split(';');
+                JewelryGPValueChart.Add(new Treasure.JewelryValue(firstJewelryValueData[0],
+                    Int32.Parse(firstJewelryValueData[1]), 
+                    Int32.Parse(firstJewelryValueData[2])));
+            }
+        }
 
-        #region Priviate Methods
 
         /// <summary>
         /// Assignment 1)Fill in treaure chart. 2)Write description.
@@ -32,8 +44,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts
             //todo create a foreach loop through each line of the text file
 
 
-            Services.OpenFile services = new Services.OpenFile();
-            List<string> monetaryChartData = services.GetMonetaryData();
+            List<string> monetaryChartData = services.GetDataFile();
             foreach (var treasurepiece in monetaryChartData)
             {           
                 string firstMonetaryChartData = treasurepiece;
@@ -61,9 +72,11 @@ namespace DungeonsAndDragons.ChartEngine.Charts
 
             return TreasureRewards;
         }
+        
+
 
         //todo put in a description of this Method 
-
+        #region Priviate Methods
         private MonsterType GetMonsterType(string monsterType)
         {
 

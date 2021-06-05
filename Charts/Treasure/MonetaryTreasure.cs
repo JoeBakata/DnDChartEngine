@@ -18,7 +18,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         /// <summary>
         /// Type of dice.
         /// </summary>
-       public Utilities.Dice Dice1 { get; set; }
+       public Utilities.Dice Dice { get; set; }
 
 
 
@@ -59,7 +59,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         public MonetaryTreasure(string treasureName, int treasureAmount, int numberOfDice, int maxRollValue, double percent)
         {
             TreasureName = treasureName;
-            Dice1 = GetDice(maxRollValue, numberOfDice);
+            Dice = GetDice(maxRollValue, numberOfDice);
             TreasureAmount = treasureAmount;
             NumberOfDice = numberOfDice;
             MaxRollValue = maxRollValue;

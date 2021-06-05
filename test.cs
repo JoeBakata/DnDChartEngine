@@ -11,7 +11,7 @@ namespace DungeonsAndDragons.ChartEngine
     class test
     {
 
-         
+
         /// <summary>
         /// Display everything in monetary chart.
         /// </summary>
@@ -19,36 +19,35 @@ namespace DungeonsAndDragons.ChartEngine
         {
             Charts.GetCharts FirstTest;
 
-           
+
 
             FirstTest = new Charts.GetCharts();
 
-            //Arrange
-            FirstTest.GetMonetaryChart();
-            //Act
+            FirstTest.GetJewelryValueChart();
 
-            //Assert
-            // string name = FirstTest.MonetaryTreasure.First(x => x.Key == Utilities.MonsterType.A).Value.Select(x => x.)
+            foreach (var item in FirstTest.JewelryGPValueChart)
+            {
+                Console.WriteLine($"Here is the {item.JewelryType}");
+                Console.WriteLine($"It is worth {item.MinimumGPValue} at minimum");
+                Console.WriteLine($"Could be worth {item.MaximumGPValue}");
+            }
+            //FirstTest.GetMonetaryChart();
 
-            List<MonetaryTreasure> Loot = FirstTest.MonetaryTreasure.First(x => x.Key == MonsterType.A).Value;
 
-            //for (int i = 0; i < Loot.Count; i++)
+            //foreach (var item in FirstTest.MonetaryTreasure)
             //{
-            //    if  //Not sure what the conditional should be. I think it should be an if statement
-            //     { 
-            //        Console.WriteLine($"The Die used for Chart A silver is {Dice.D6}");
-            //     }
+            //    Console.WriteLine($"MonsterType {item.Key}");
 
+            //    foreach (var loot in item.Value)
+            //    {
+            //        Console.WriteLine($"   Treasure Name: {loot.TreasureName}");
+            //        Console.WriteLine($"   Treasure Amount: {loot.TreasureAmount}");
+            //        Console.WriteLine($"   Dice {loot.Dice}");
+            //        Console.WriteLine($"   Percent: {loot.Percent}");
+            //        Console.WriteLine($"   Max Roll Value: {loot.MaxRollValue}");
+            //        Console.WriteLine($"   Number Of Dice: {loot.NumberOfDice}");
+            //    }
             //}
-
-
-            //foreach (var item in Loot)
-            //{
-
-            //    Console.WriteLine($"The items in A are {item.TreasureName}");
-
-            //}
-
             Console.ReadLine();
         }
     }
