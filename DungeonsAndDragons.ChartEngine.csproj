@@ -43,6 +43,7 @@
     <Compile Include="Charts\Treasure\JewelryTreasure.cs" />
     <Compile Include="Charts\Treasure\JewelryValue.cs" />
     <Compile Include="Charts\Treasure\MagicItemTreasure.cs" />
+    <Compile Include="Charts\Treasure\MagicItemValue.cs" />
     <Compile Include="Charts\Treasure\MonetaryTreasure.cs" />
     <Compile Include="Charts\Treasure\GemValue.cs" />
     <Compile Include="Services\OpenFile.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="Utilities\Enum.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\GemValueData.txt" />
     <Content Include="Resources\JewelryValueData.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
