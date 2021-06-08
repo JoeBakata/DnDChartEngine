@@ -14,19 +14,23 @@ namespace DungeonsAndDragons.ChartEngine.Resources
 
         public int MinimumGPValue { get; set; }
 
-        public int MaximumGPValue { get; set; }
+        public int MinimumRollValue { get; set; }
 
+        public int MaximumRollValue { get; set; }
+
+        public Dice Dice { get; set; }
         #endregion Properties
 
-        public GemValue(string gemType, int minimumGPValue, int maximumGPValue)
+        public GemValue(string gemType, int minimumGPValue, int minimumRollValue, int maximumRollValue)
         {
             GemType = GetGemType(gemType);
             MinimumGPValue = minimumGPValue;
-            MaximumGPValue = maximumGPValue;
+            MinimumRollValue = minimumRollValue;
+            MaximumRollValue = maximumRollValue;
+            Dice = Dice.D100;
         }
         private GemType GetGemType(string gemtype)
         {
-            //todo Below why do we use (GemType)? I don't understand in either spot what it is actually doing? I need to understand it and be able to explain it in coding terms as well as plain english.
             return (GemType)Enum.Parse(typeof(GemType), gemtype);
         }
 

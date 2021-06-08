@@ -44,7 +44,7 @@
     <Compile Include="Charts\Treasure\JewelryValue.cs" />
     <Compile Include="Charts\Treasure\MagicItemTreasure.cs" />
     <Compile Include="Charts\Treasure\MonetaryTreasure.cs" />
-    <Compile Include="Resources\GemValue.cs" />
+    <Compile Include="Charts\Treasure\GemValue.cs" />
     <Compile Include="Services\OpenFile.cs" />
     <Compile Include="test.cs" />
     <Compile Include="Utilities\Enum.cs" />
