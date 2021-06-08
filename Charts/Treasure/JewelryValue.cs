@@ -23,13 +23,11 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
             JewelryType = GetJewelryType(jewelryType);
             MinimumGPValue = minimumGPValue;
             MaximumGPValue = maximumGPValue;
-
         }
         private JewelryType GetJewelryType(string jewelryType)
         {
 
             return (JewelryType)Enum.Parse(typeof(JewelryType), jewelryType);
-
         }
 
     }
