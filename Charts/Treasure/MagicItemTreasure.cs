@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DungeonsAndDragons.ChartEngine.Utilities;
+
 
 namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
 {
@@ -15,7 +17,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         /// </summary>
         public double Percent { get; set; }
 
-        public Utilities.Dice Dice { get; set; }
+        public Dice Dice { get; set; }
 
         /// <summary>
         /// This is the magic item type name 
@@ -36,7 +38,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
             MagicItemType = magicItemType;
             Percent = percent;
             NameType = nameType;
-            Dice = Utilities.Dice.D100;
+            Dice = Dice.D100;
         }
 
         //public Utilities.Dice GetMagicItemSubtable(double percent)
