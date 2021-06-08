@@ -43,7 +43,7 @@
     }
 
 
-    public enum GemType
+    public enum GemType//todo Should the values of the Gems be in its own GemValueData.txt like Jewelry is?
     {
         Quartz = 10,    
         Turquoise = 10,
@@ -64,7 +64,8 @@
         Electrum,
         Gold,
         Platinum,
-        Jewelry
+        Jewelry,
+        Gems
     }
 
     public enum MagicItemTypes
