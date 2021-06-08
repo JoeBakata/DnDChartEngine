@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DungeonsAndDragons.ChartEngine.Utilities;
 
-namespace DungeonsAndDragons.ChartEngine.Resources
+namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
 {
     public class GemValue
     {
@@ -29,9 +29,9 @@ namespace DungeonsAndDragons.ChartEngine.Resources
             MaximumRollValue = maximumRollValue;
             Dice = Dice.D100;
         }
-        private GemType GetGemType(string gemtype)
+        private GemType GetGemType(string gemType)
         {
-            return (GemType)Enum.Parse(typeof(GemType), gemtype);
+            return (GemType)Enum.Parse(typeof(GemType), gemType);
         }
 
     }
