@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DungeonsAndDragons.ChartEngine.Utilities;
+
 
 namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
 {
@@ -20,8 +22,6 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         /// </summary>
        public Utilities.Dice Dice { get; set; }
 
-
-
         /// <summary>
         /// The amount of tresure.
         /// </summary>
@@ -33,7 +33,6 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         ///<remarks>D100 Roll</remarks>
         public double Percent { get; set; }
 
-               
         /// <summary>
         /// This is the Number of Dice that gets rolled.
         /// </summary>
@@ -43,8 +42,6 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         /// This is the Highest value that the rolled dice can achive.
         /// </summary>
         public int MaxRollValue { get; set; }
-        
-        
         
         #endregion Properties
         
@@ -56,8 +53,8 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         /// <param name="numberOfDice">This is the number of dice that get rolled.</param>
         /// <param name="maxRollValue">This is the Highest value that the rolled dice can achive.</param>
         /// <param name="percent">This is a percentange from 01-100.</param>
-        public MonetaryTreasure(string treasureName, int treasureAmount, int numberOfDice, int maxRollValue, double percent)
-        {
+        public MonetaryTreasure(string treasureName, int treasureAmount, int numberOfDice, int maxRollValue, double percent)// This is a constructor called MonetaryTreasure which passes
+        {// in the following parameters. Yes?
             TreasureName = treasureName;
             Dice = GetDice(maxRollValue, numberOfDice);
             TreasureAmount = treasureAmount;
@@ -66,15 +63,15 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
             Percent = percent;
         }
 
-        public Utilities.Dice GetDice(int maxRollValue, int numberOfDice)
+        public Dice GetDice(int maxRollValue, int numberOfDice)//This is a Method called GetDice which is type Dice. Dice is an enum.
         {
 
             if(numberOfDice == 0)
             {
-                return Utilities.Dice.DNull;
+                return Dice.DNull;
             }
             int diceValue = maxRollValue / numberOfDice; 
-            return (Utilities.Dice)diceValue;
+            return (Dice)diceValue;//Why is Dice inside ()? I am sure it has to do with syntax however, is it because (Dice) is from enum? Above we have Dice.DNull, why is it not like that?
         }
     }
 
