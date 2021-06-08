@@ -39,11 +39,12 @@
   <ItemGroup />
   <ItemGroup>
     <Compile Include="Charts\GetCharts.cs" />
-    <Compile Include="Charts\Treasure\GemsTreasure.cs" />
+    <Compile Include="Charts\Treasure\GemTreasure.cs" />
     <Compile Include="Charts\Treasure\JewelryTreasure.cs" />
     <Compile Include="Charts\Treasure\JewelryValue.cs" />
     <Compile Include="Charts\Treasure\MagicItemTreasure.cs" />
     <Compile Include="Charts\Treasure\MonetaryTreasure.cs" />
+    <Compile Include="Resources\GemValue.cs" />
     <Compile Include="Services\OpenFile.cs" />
     <Compile Include="test.cs" />
     <Compile Include="Utilities\Enum.cs" />
