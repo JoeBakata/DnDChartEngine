@@ -21,6 +21,7 @@ namespace DungeonsAndDragons.ChartEngine.Services
             }
                 return MonetaryChartDataList;
         }//todo So I know this is used to read the textfile. But we made some changes and I want to know - is this the basic formula for writing a stream reader? Should I memorize it?
+        //There are a number of different ways to input a text doc. Memorizing it isn't a bad idea, but you dont have to. Google is a programmer's best friend.  
 
     }
 }
