@@ -52,7 +52,6 @@ namespace DungeonsAndDragons.ChartEngine
         }
     }
 }
-//todo Add Gems to the text file, it is similar to jewelry.
-//todo create the gem value object, similar to the jewelry value object.
 //todo display the gems with a foreach loop, similar to the jewelry one.
 //todo make comments for all classes, methods,
+//todo create a loop to display the gems, jewelry, and magic items.

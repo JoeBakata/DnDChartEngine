@@ -10,7 +10,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
 {
     public class JewelryTreasure
     {
-
+        #region Properties
         /// <summary>
         /// Name of the treasure.
         /// </summary>
@@ -35,6 +35,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
 
         public int MaxRollValue { get; set; }//This is the highest number of items there can be of jewelry in the treasure.
 
+        #endregion Properties
 
         public JewelryTreasure (string treasureName, int minimumValue, int maximumValue, int numberOfDice, int maxRollValue)
         {

@@ -51,8 +51,13 @@
     <Compile Include="Utilities\Enum.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\GemValueData.txt" />
+    <Content Include="Resources\GemValueData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\JewelryValueData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MagicItemSubtableName.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\MonetaryChartData.txt">
