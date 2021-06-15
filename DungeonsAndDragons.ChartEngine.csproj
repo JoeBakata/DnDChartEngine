@@ -57,6 +57,9 @@
     <Content Include="Resources\JewelryValueData.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\MagicItemData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\MagicItemSubtableName.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
