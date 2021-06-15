@@ -11,72 +11,52 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
     public class MagicItemTreasure
     {
         #region Properties
-
-        /// <summary>
-        /// This is a percentange from 01-100.
-        /// </summary>
+        public Dice Dice { get; set; }
         public double Percent { get; set; }
 
-        public Dice Dice { get; set; }
+        public bool AnyMagicItems { get; set; }
 
-        /// <summary>
-        /// This is the magic item type name 
-        /// </summary>
-        /// <example>sword, potion, rings</example>
-        public string NameType { get; set; }
+        public int NumberOfAnyMagicItems { get; set; }
 
-        
-        ///<summary>
-        ///This is the type of magic item
-        /// </summary>
-        public string MagicItemType { get; set; }
+        public Dictionary<MonsterTypes, Dictionary<int, int>> MagicItemTypes { get; set; }
+
 
         #endregion Properties
 
-        public MagicItemTreasure(string magicItemType, double percent, string nameType )
+        public MagicItemTreasure(double percent, bool anyMagicItems, int numberOfMagicItems, string magicItemsCompressed) 
         {
-            MagicItemType = magicItemType;
-            Percent = percent;
-            NameType = nameType;
             Dice = Dice.D100;
+            Percent = percent;
+            AnyMagicItems = anyMagicItems;
+            NumberOfAnyMagicItems = numberOfMagicItems;
+            if (magicItemsCompressed != "nil")
+            {
+            MagicItemTypes = DecompressedMagicItems(magicItemsCompressed);
+
+            }
         }
 
-        //public Utilities.Dice GetMagicItemSubtable(double percent)
-        //{
-        //    double percent;
-        //    if (percent =< 20)//if percent is less than or equal to 20 then swords.
-        //    {
-        //        Swords;
-        //    }
-        //    else if (percent > 20 && percent <= 30)
-        //    {
-        //        Other Weapons;
-        //    }
-        //    else if (percent > 30 && percent <= 40)
-        //    {
-        //        Armor and Shields;
-        //    }
-        //    else if (percent > 40 && percent <= 65)
-        //    {
-        //        Potions;
-        //    }
-        //    else if (percent > 65 && percent <= 85)
-        //    {
-        //        Scrolls;
-        //    }
-        //    else if (percent > 85 && percent <= 90)
-        //    {
-        //        Rings;
-        //    }
-        //    else if (percent > 90 && percent <= 95)
-        //    {
-        //        Wands, Staves, and Wands;
-        //    }
-        //    else
-        //    {
-        //        Miscellaneous Magic;
-        //    }
-        //    return char;
-        //}
+        private Dictionary<MonsterTypes, Dictionary<int, int>> DecompressedMagicItems(string magicItemsCompressed)
+        {
+            Dictionary<MonsterTypes, Dictionary<int, int>> magicItemTypes = new Dictionary<MonsterTypes, Dictionary<int, int>>();
+            var magicItemsDecompressed = magicItemsCompressed.Split(':');
+            foreach (var item in magicItemsDecompressed)
+            {
+                var magicItemMinMax = item.Split(',');
+                MonsterTypes itemTypes = GetMagicItemTypes(magicItemMinMax[0]);
+                var MinMax = new Dictionary<int, int>();
+                MinMax.Add(int.Parse(magicItemMinMax[1]), int.Parse(magicItemMinMax[2]));
+
+                magicItemTypes.Add(itemTypes, MinMax);
+            }
+            return magicItemTypes;
+        }
+
+        private MonsterTypes GetMagicItemTypes(string magicItemTypes)
+        {
+
+            return (MonsterTypes)Enum.Parse(typeof(MonsterTypes), magicItemTypes);
+        }
+
     }
 }
