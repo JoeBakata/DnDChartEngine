@@ -14,7 +14,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
 
         public Dice Dice { get; set; }
 
-        public MagicItemTypes MagicItemTypes {get; set;}
+        public MonsterTypes MagicItemTypes {get; set;}
 
         public int MinimumRollValue { get; set; }
 
@@ -33,9 +33,9 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
             Dice Dice = Dice.D100;
 
         }
-        private MagicItemTypes GetMagicItemTypes(string magicItemTypes)
+        private MonsterTypes GetMagicItemTypes(string magicItemTypes)
         {
-            return (MagicItemTypes)Enum.Parse(typeof(MagicItemTypes), magicItemTypes);
+            return (MonsterTypes)Enum.Parse(typeof(MonsterTypes), magicItemTypes);
         }
 
     }
