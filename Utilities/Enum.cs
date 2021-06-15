@@ -16,7 +16,7 @@
         
     }
 
-    public enum MonsterType
+    public enum MonsterTypes
     {
         A,
         B,
