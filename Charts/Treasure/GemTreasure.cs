@@ -23,15 +23,15 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         public Dice Dice { get; set; }//This is here because it is in the JewelryTreasure.cs. Not sure why or if I even need this.
 
         /// <summary>
-        /// not sure what to put because the Name of this ?Constructor? is not descriptive enough. Please help!
+        /// MinimumValue of the Gem. // Is not descriptive enough. Please help!
         /// </summary>
-        public int MinimumValue { get; set; }//If these are minimum number of gems then this should be changed to be more descriptive?
+        public int MinimumValue { get; set; }
         /// <summary>
         /// See above ^^^.
         /// </summary>
-        public int MaximumValue { get; set; }//See above ^.
+        public int MaximumValue { get; set; }
         /// <summary>
-        /// Percent.
+        /// Percent. // Percent of what exactly? Percent chance there are gems in the loot? Or percent to determine which gem type there is?
         /// </summary>
         public double Percent { get; set; }
         /// <summary>
@@ -46,10 +46,6 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         /// Highest value of gems.
         /// </summary>
         public int MaxRollValue { get; set; }
-        /// <summary>
-        /// Type of Gem.
-        /// </summary>
-        public GemType GemType { get; set; }//Is this needed? Is it wrong?
 
         #endregion Properties
 
