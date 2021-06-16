@@ -24,7 +24,9 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         #endregion Properties
 
         public MagicItemTreasure(double percent, bool anyMagicItems, int numberOfMagicItems, string magicItemsCompressed) 
-        {
+        {   //todo I think this still needs work. How are we making it decide yes an item but must be a sword, other weapon, or armor? 
+            //todo also the following: any 3 except weapons, add a potion and a scroll, 2-8 potions(same as 2d4 potions), 1-4 scrolls (same as 1d4 scrolls)? I am not sure.
+            //todo I guess we have to add something for dice?
             Dice = Dice.D100;
             Percent = percent;
             AnyMagicItems = anyMagicItems;
