@@ -21,11 +21,15 @@ namespace DungeonsAndDragons.ChartEngine.Charts
 
         public List<Treasure.GemValue> GemGPValueChart = new List<Treasure.GemValue>();
 
-        public GetCharts() //todo Why is nothing in the body of this? Because there are no parameters? This is just a Method?
+        public GetCharts() //todo Why is nothing in the body of this? Because there are no parameters? This is just a Method? A: No! This is a Class called GetCharts
         {
             GetMonetaryChart();
             GetJewelryValueChart();
             GetGemValueChart();
+            //todo finish up the Method for getgemvaluechart()
+            //todo create magicitem object like the above ones.
+            //todo finish populating the textfile.
+            //todo create a method to populate the magic item .
         }
 
         public void GetJewelryValueChart()
