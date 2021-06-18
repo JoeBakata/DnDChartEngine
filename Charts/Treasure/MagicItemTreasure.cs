@@ -18,12 +18,18 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
 
         public int NumberOfAnyMagicItems { get; set; }
 
-        public Dictionary<MonsterTypes, Dictionary<int, int>> MagicItemTypes { get; set; }
+        public bool ExceptWeapons { get; set; }
+
+        public int NumberOfDice { get; set; }
+
+        public int MaxRollValue { get; set; }
+
+        public Dictionary<MonsterTypes, List<string>> MagicItemTypes { get; set; }
 
 
         #endregion Properties
 
-        public MagicItemTreasure(double percent, bool anyMagicItems, int numberOfMagicItems, string magicItemsCompressed) 
+        public MagicItemTreasure(double percent, bool anyMagicItems, int numberOfMagicItems, bool exceptWeapons, string magicItemsCompressed) 
         {   //todo I think this still needs work. How are we making it decide yes an item but must be a sword, other weapon, or armor? 
             //todo also the following: any 3 except weapons, add a potion and a scroll, 2-8 potions(same as 2d4 potions), 1-4 scrolls (same as 1d4 scrolls)? I am not sure.
             //todo I guess we have to add something for dice?
@@ -31,6 +37,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
             Percent = percent;
             AnyMagicItems = anyMagicItems;
             NumberOfAnyMagicItems = numberOfMagicItems;
+            ExceptWeapons = exceptWeapons;
             if (magicItemsCompressed != "nil")
             {
             MagicItemTypes = DecompressedMagicItems(magicItemsCompressed);
@@ -38,18 +45,21 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
             }
         }
 
-        private Dictionary<MonsterTypes, Dictionary<int, int>> DecompressedMagicItems(string magicItemsCompressed)
+        private Dictionary<MonsterTypes, List<string>> DecompressedMagicItems(string magicItemsCompressed)
         {
-            Dictionary<MonsterTypes, Dictionary<int, int>> magicItemTypes = new Dictionary<MonsterTypes, Dictionary<int, int>>();
+            Dictionary<MonsterTypes, List<string>> magicItemTypes = new Dictionary<MonsterTypes, List<string>>();
             var magicItemsDecompressed = magicItemsCompressed.Split(':');
             foreach (var item in magicItemsDecompressed)
             {
                 var magicItemMinMax = item.Split(',');
                 MonsterTypes itemTypes = GetMagicItemTypes(magicItemMinMax[0]);
-                var MinMax = new Dictionary<int, int>();
-                MinMax.Add(int.Parse(magicItemMinMax[1]), int.Parse(magicItemMinMax[2]));
-
-                magicItemTypes.Add(itemTypes, MinMax);
+                var MinMax = new List<string>();
+                MinMax.Add(magicItemMinMax[1]);
+                if (magicItemMinMax.Count() > 2)
+                {
+                    MinMax.Add(magicItemMinMax[2]);
+                }
+                    magicItemTypes.Add(itemTypes, MinMax);
             }
             return magicItemTypes;
         }
