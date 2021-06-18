@@ -14,23 +14,29 @@ namespace DungeonsAndDragons.ChartEngine.Charts
         Services.OpenFile services = new Services.OpenFile();
         #endregion Fields
 
-        public Dictionary<MonsterTypes, List<Treasure.MonetaryTreasure>> MonetaryTreasure = //todo What is this doing? It is more complicated than what I learned. I think it is making
-            new Dictionary<MonsterTypes, List<Treasure.MonetaryTreasure>>(); //todo a new dictionary with value monstertype and key of list? Please explain.
+        public Dictionary<MonsterTypes, List<Treasure.MonetaryTreasure>> MonetaryTreasure = 
+            new Dictionary<MonsterTypes, List<Treasure.MonetaryTreasure>>(); 
 
         public List<Treasure.JewelryValue> JewelryGPValueChart = new List<Treasure.JewelryValue>();
 
         public List<Treasure.GemValue> GemGPValueChart = new List<Treasure.GemValue>();
 
-        public GetCharts() //todo Why is nothing in the body of this? Because there are no parameters? This is just a Method? A: No! This is a Class called GetCharts
+        public Dictionary<MonsterTypes, List<Treasure.MagicItemTreasure>> MagicItemTreasure =
+            new Dictionary<MonsterTypes, List<Treasure.MagicItemTreasure>>();
+
+        public GetCharts() 
         {
             GetMonetaryChart();
             GetJewelryValueChart();
             GetGemValueChart();
+            
             //todo finish up the Method for getgemvaluechart()
             //todo create magicitem object like the above ones.
             //todo finish populating the textfile.
             //todo create a method to populate the magic item .
         }
+
+        #region Public Methods
 
         public void GetJewelryValueChart()
         {
@@ -88,6 +94,15 @@ namespace DungeonsAndDragons.ChartEngine.Charts
             return TreasureRewards;
         }
 
+        public void GetMagicItemTreasureChart()
+        {
+            //todo populate this method. Will be similar to getMonetaryChart.  it will open the text doc and pass in the values from it.
+            //todo get rid of the old todos that are done.
+
+        }
+        #endregion Public Methods
+
+
         #region Priviate Methods
         /// <summary>
         /// This gets the monster type of each monster.
@@ -101,6 +116,5 @@ namespace DungeonsAndDragons.ChartEngine.Charts
             return (MonsterTypes)Enum.Parse(typeof(MonsterTypes), monsterType);
         }
         #endregion Private Methods
-        //todo How do we make MonetaryChartData.txt more human readable. I tried to do some research and I think you can put in spaces and then when it reads the file it can string.split
-    }//todo removing the spaces I add? Can you help me with this?
+    }
 }
