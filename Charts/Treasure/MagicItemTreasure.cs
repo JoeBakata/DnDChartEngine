@@ -11,17 +11,40 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
     public class MagicItemTreasure
     {
         #region Properties
+        
+        /// <summary>
+        /// Get the type of dice using enum -- I think.
+        /// </summary>
         public Dice Dice { get; set; }
+
+        /// <summary>
+        /// Get a percent between 01-100.
+        /// </summary>
         public double Percent { get; set; }
 
+        /// <summary>
+        /// True (1) if ANY magic items. False(0) if specific magic items or no magic items.
+        /// </summary>
         public bool AnyMagicItems { get; set; }
 
+        /// <summary>
+        /// The number of magic items of type ANY.
+        /// </summary>
         public int NumberOfAnyMagicItems { get; set; }
 
+        /// <summary>
+        /// Magic items that exclude weapons.
+        /// </summary>
         public bool ExceptWeapons { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public int NumberOfDice { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public int MaxRollValue { get; set; }
 
         public Dictionary<MonsterTypes, List<string>> MagicItemTypes { get; set; }
@@ -29,10 +52,18 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
 
         #endregion Properties
 
-        public MagicItemTreasure(double percent, bool anyMagicItems, int numberOfMagicItems, bool exceptWeapons, string magicItemsCompressed) 
-        {   //todo I think this still needs work. How are we making it decide yes an item but must be a sword, other weapon, or armor? 
-            //todo also the following: any 3 except weapons, add a potion and a scroll, 2-8 potions(same as 2d4 potions), 1-4 scrolls (same as 1d4 scrolls)? I am not sure.
-            //todo I guess we have to add something for dice?
+        /// <summary>
+        /// Instanstiate MagicItemTreasure. Instantiate literally means "to create an instance of". In programming, this generally means to create an instance of an object.
+        /// You do that by using a constructor. A constructor is a special method of a class that initializes an object of that class.
+        /// Constructors have the same name as the class they're in, and because they always return an instance of that class, a return type isn't needed.
+        /// </summary>
+        /// <param name="percent">A number between 01-100.</param>
+        /// <param name="anyMagicItems">If you roll on the table to get ANY type of magic item. Some treasure does not allow ANY type.</param>
+        /// <param name="numberOfMagicItems">The Number of magic items in the treasure.</param>
+        /// <param name="exceptWeapons">This does not allow any weapons (swords, other weapons) to be found in the treasure. All other items are okay.</param>
+        /// <param name="magicItemsCompressed"></param>
+        public MagicItemTreasure(double percent, bool anyMagicItems, int numberOfMagicItems, bool exceptWeapons, string magicItemsCompressed)//MagicItemTreasure constructor with arguements
+        {    //double percent, bool anyMagicItems, int numberOfMagicItems, bool exceptWeapons, string magicItemsCompressed.
             Dice = Dice.D100;
             Percent = percent;
             AnyMagicItems = anyMagicItems;
@@ -41,10 +72,10 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
             if (magicItemsCompressed != "nil")
             {
             MagicItemTypes = DecompressedMagicItems(magicItemsCompressed);
-
             }
         }
 
+        #region Private Methods
         private Dictionary<MonsterTypes, List<string>> DecompressedMagicItems(string magicItemsCompressed)
         {
             Dictionary<MonsterTypes, List<string>> magicItemTypes = new Dictionary<MonsterTypes, List<string>>();
@@ -69,6 +100,6 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
 
             return (MonsterTypes)Enum.Parse(typeof(MonsterTypes), magicItemTypes);
         }
-
+        #endregion Private Methods
     }
 }
