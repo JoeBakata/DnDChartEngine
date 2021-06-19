@@ -13,7 +13,6 @@
         D20 = 20,
         D100 = 100,
         DNull = 0
-        
     }
 
     public enum MonsterTypes
@@ -42,8 +41,7 @@
         V
     }
 
-
-    public enum GemType//todo Should the values of the Gems be in its own GemValueData.txt like Jewelry is?
+    public enum GemType
     {
         Quartz = 10,    
         Turquoise = 10,
@@ -78,7 +76,6 @@
         F = 90,
         G = 95,
         H = 100
-    
     }
 
     public enum JewelryType
@@ -92,5 +89,4 @@
         Crown,
         Sceptre
     }
-
 }
