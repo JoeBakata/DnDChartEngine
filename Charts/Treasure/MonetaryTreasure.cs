@@ -79,7 +79,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         //todo endregion of some type here?
 
         //todo should there be a region here?
-        public Dice GetDice(int maxRollValue, int numberOfDice)//This is a Method called GetDice which is type Dice. Dice is an enum.
+        public Dice GetDice(int maxRollValue, int numberOfDice)//todo This is a Method called GetDice which is type Dice. Dice is an enum. Yes?
         {
 
             if(numberOfDice == 0)
@@ -87,7 +87,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
                 return Dice.DNull;
             }
             int diceValue = maxRollValue / numberOfDice; 
-            return (Dice)diceValue;//Why is Dice inside ()? I am sure it has to do with syntax however, is it because (Dice) is from enum? Above we have Dice.DNull, why is it not like that?
+            return (Dice)diceValue;
         }
     }
     //todo what is this     <!---->
