@@ -21,16 +21,16 @@ namespace DungeonsAndDragons.ChartEngine.Charts
 
         public List<Treasure.GemValue> GemGPValueChart = new List<Treasure.GemValue>();
 
-        public Dictionary<MonsterTypes, List<Treasure.MagicItemTreasure>> MagicItemTreasure =
-            new Dictionary<MonsterTypes, List<Treasure.MagicItemTreasure>>();
+        public Dictionary<MonsterTypes, Treasure.MagicItemValue> MagicItemValue =
+            new Dictionary<MonsterTypes, Treasure.MagicItemValue>();
 
         public GetCharts() 
         {
             GetMonetaryChart();
             GetJewelryValueChart();
             GetGemValueChart();
+            GetMagicItemTreasureChart();
             
-            //todo finish up the Method for getgemvaluechart()
             //todo create magicitem object like the above ones.
             //todo finish populating the textfile.
             //todo create a method to populate the magic item .
@@ -55,10 +55,34 @@ namespace DungeonsAndDragons.ChartEngine.Charts
         public void GetGemValueChart()
         {
             List<string> goldPieceValue = services.GetDataFile(@"Resources\GemValueData.txt");
-
-
+            foreach (var item in goldPieceValue)
+            {
+                var gemValueData = item.Split(';');
+                GemGPValueChart.Add(new Treasure.GemValue(gemValueData[0],
+                    Int32.Parse(gemValueData[1]), 
+                    double.Parse(gemValueData[2]), 
+                    double.Parse(gemValueData[3])));
+            }
         }
 
+        public void GetMagicItemTreasureChart()
+        {
+            List<string> magicItemValue = services.GetDataFile(@"C:\Users\Joseph\Desktop\DungeonsAndDragons.ChartEngine\DungeonsAndDragons.ChartEngine\DungeonsAndDragons.ChartEngine\Resources\MagicItemData.txt");
+            foreach (var item in magicItemValue)
+            {
+                var magicItemData = item.Split(',');
+                var firstAddress = magicItemData[0].Split(':');
+
+                MonsterTypes monsterType = GetMonsterType(firstAddress[0]);
+                double percentageOfMagicalTreasure = double.Parse(firstAddress[1]);
+                bool isAny = magicItemData[1] == "1" ? true : false;
+                int amountOfAny = Int32.Parse(magicItemData[2].ToString());
+                string itemDetails = magicItemData[3].ToString();
+                MagicItemValue.Add(monsterType, new Treasure.MagicItemValue(percentageOfMagicalTreasure, isAny, amountOfAny, itemDetails));
+
+            }
+
+        }
         /// <summary>
         /// Assignment 1)Fill in treaure chart. 2)Write description.
         /// </summary>
@@ -94,12 +118,6 @@ namespace DungeonsAndDragons.ChartEngine.Charts
             return TreasureRewards;
         }
 
-        public void GetMagicItemTreasureChart()
-        {
-            //todo populate this method. Will be similar to getMonetaryChart.  it will open the text doc and pass in the values from it.
-            //todo get rid of the old todos that are done.
-
-        }
         #endregion Public Methods
 
 

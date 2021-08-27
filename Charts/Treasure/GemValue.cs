@@ -24,12 +24,12 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         /// <summary>
         /// The minimum number of gems -- or so I think.
         /// </summary>
-        public int MinimumRollValue { get; set; }
+        public double MinimumRollValue { get; set; }
 
         /// <summary>
         /// The maximum number of gems -- or so I think.
         /// </summary>
-        public int MaximumRollValue { get; set; }
+        public double MaximumRollValue { get; set; }
 
         /// <summary>
         /// Refers to the Dice enum to get a dice type -- I think.
@@ -46,7 +46,7 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         /// <param name="minimumGPValue">Determines the lowest value, in gold pieces, of the gems -- I think.</param>
         /// <param name="minimumRollValue">Not sure, see above.</param>
         /// <param name="maximumRollValue">Not sure, see above.</param>
-        public GemValue(string gemType, int minimumGPValue, int minimumRollValue, int maximumRollValue)//GemValue constructor with arguements int minimumGPValue, int minimumRollValue,
+        public GemValue(string gemType, int minimumGPValue, double minimumRollValue, double maximumRollValue)//GemValue constructor with arguements int minimumGPValue, int minimumRollValue,
         {                                                                                              // and maximumRollValue.
             GemType = GetGemType(gemType);
             MinimumGPValue = minimumGPValue;

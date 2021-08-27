@@ -55,14 +55,18 @@ namespace DungeonsAndDragons.ChartEngine.Charts.Treasure
         /// <param name="magicItemTypes">Different types of magic items.</param>
         public MagicItemValue (string magicItemSubtableName, int minimumRollValue, int maximumRollValue, string magicItemTypes)//MagicItemValue constructor with arguements 
         {   //string magicItemSubtableName, int minimumRollValue, int maximumRollValue, string magicItemTypes.
-            MagicItemTypes = GetMagicItemTypes(magicItemTypes);
             MagicItemSubtableName = magicItemSubtableName;
             MinimumRollValue = minimumRollValue;
             MaximumRollValue = maximumRollValue;
+            MagicItemTypes = GetMagicItemTypes(magicItemTypes);
             Dice Dice = Dice.D100;
 
         }
-
+        public MagicItemValue (double percentageOfMagicalTreasure, bool isAny, int amountOfAny, string itemDetails)
+        {
+            //todo finish this to create the properties.
+            
+        }
         #region Private Methods 
         /// <summary>
         /// GetMagicItemTypes Method with access modifier of private and return type of MonsterTypes.
