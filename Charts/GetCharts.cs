@@ -17,9 +17,9 @@ namespace DungeonsAndDragons.ChartEngine.Charts
         public Dictionary<MonsterTypes, List<Treasure.MonetaryTreasure>> MonetaryTreasure = 
             new Dictionary<MonsterTypes, List<Treasure.MonetaryTreasure>>(); 
 
-        public List<Treasure.JewelryValue> JewelryGPValueChart = new List<Treasure.JewelryValue>();
+        public List<Treasure.JewelryValue> JewelryGPValueChart = new List<Treasure.JewelryValue>();// Just created a solution 
 
-        public List<Treasure.GemValue> GemGPValueChart = new List<Treasure.GemValue>();
+        public List<Treasure.GemValue> GemGPValueChart = new List<Treasure.GemValue>();//todo create a solution for this one. Use the jewelry value one from above as a template.
 
         public Dictionary<MonsterTypes, Treasure.MagicItemValue> MagicItemValue =
             new Dictionary<MonsterTypes, Treasure.MagicItemValue>();
